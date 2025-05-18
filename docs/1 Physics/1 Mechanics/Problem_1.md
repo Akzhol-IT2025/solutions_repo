@@ -54,8 +54,11 @@ R = \frac{v_0^2 \sin(2\theta)}{g}
 ⸻
 
 Summary
+
 	•	Initial velocity: v_0
+
 	•	Launch angle: \theta
+    
 	•	Acceleration due to gravity: g \approx 9.8 \, \text{m/s}^2
 
 Projectile motion is a classic example of 2D motion under constant acceleration. It is widely used in physics, engineering, and sports science to predict the path of thrown or launched objects.
