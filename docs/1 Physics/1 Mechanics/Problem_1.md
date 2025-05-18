@@ -6,7 +6,7 @@ Projectile motion is the motion of an object thrown or projected into the air, s
 
 To analyze projectile motion, we separate the motion into horizontal and vertical components:
 
-⸻
+
 
 1. Horizontal Motion (x-direction)
 
