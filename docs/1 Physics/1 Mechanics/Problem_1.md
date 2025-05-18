@@ -9,21 +9,32 @@ To analyze projectile motion, we separate the motion into horizontal and vertica
 ⸻
 
 1. Horizontal Motion (x-direction)
+
 	•	There is no acceleration in the horizontal direction (assuming air resistance is negligible), so velocity remains constant:
+
 v_x = v_0 \cos \theta
+
 	•	The horizontal distance or range is given by:
+
 x = v_0 \cos \theta \cdot t
 
 ⸻
 
 2. Vertical Motion (y-direction)
 	•	The vertical motion is influenced by gravity:
+
 v_y = v_0 \sin \theta - g t
+
 	•	The vertical displacement at any time t:
+
 y = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
+
 	•	At the maximum height, the vertical velocity becomes zero:
+
 v_y = 0 \Rightarrow t_{\text{max}} = \frac{v_0 \sin \theta}{g}
+
 	•	Maximum height reached:
+    
 H = \frac{(v_0 \sin \theta)^2}{2g}
 
 ⸻
