@@ -77,3 +77,9 @@ $$
 
 ___
 Projectile motion is a classic example of 2D motion under constant acceleration.  It is widely used in physics, engineering, and sports science to predict the path of thron or launched objects
+
+<img src="docs/1 Physics/1 Mechanics/Projectile_motion.png" alt="Projectile Motion">v
+
+<a href="docs/1 Physics/1 Mechanics/Projectile_motion.png" target="_blank">View Image</a>
+
+![Projectile Motion](docs/1%20Physics/1%20Mechanics/Projectile_motion.png)
