@@ -129,6 +129,84 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<p>Here’s a complete Markdown-style explanation for Problem 3 – Trajectories of a Freely Released Payload Near Earth, ready to be inserted into your Python code or Jupyter notebook (before or after adding the simulations).</p>
+<p>⸻</p>
+<p>🛰️ Problem 3 – Trajectories of a Freely Released Payload Near Earth</p>
+<p>⸻</p>
+<p>🚀 Overview &amp; Motivation</p>
+<p>When a payload is released from a moving rocket near Earth, its trajectory is determined by its initial velocity, altitude, and direction. These trajectories can vary widely, resulting in:
+    •   Elliptical orbits (if the velocity is below escape speed),
+    •   Parabolic paths (if velocity equals escape velocity),
+    •   Hyperbolic trajectories (if the object escapes Earth’s gravity),
+    •   Reentry paths (if it’s directed back toward Earth).</p>
+<p>Understanding these paths is crucial for:
+    •   Satellite deployment,
+    •   Space mission planning,
+    •   Escape trajectory design,
+    •   Reentry capsule control.</p>
+<p>⸻</p>
+<p>📘 1 – Physics Background</p>
+<p>The motion of the payload is governed by Newton’s Law of Universal Gravitation:</p>
+<p>\vec{F} = -\frac{GMm}{r^2} \hat{r}</p>
+<p>Which leads to the equation of motion:</p>
+<p>\vec{a} = -\frac{GM}{r^2} \hat{r}</p>
+<p>Where:
+    •   G is the gravitational constant,
+    •   M is the mass of Earth,
+    •   m is the mass of the payload,
+    •   r is the distance from the center of Earth.</p>
+<p>⸻</p>
+<p>📐 2 – Types of Trajectories</p>
+<p>Depending on the initial speed v_0 and angle, the payload follows one of the conic sections:</p>
+<p>Trajectory Type Speed Condition Shape
+Suborbital / Reentry    v_0 &lt; v_{\text{circular}}   Elliptical arc
+Circular Orbit  v_0 = v_{\text{circular}}   Circle
+Elliptical Orbit    v_{\text{circular}} &lt; v_0 &lt; v_{\text{escape}}   Ellipse
+Parabolic Escape    v_0 = v_{\text{escape}} Parabola
+Hyperbolic Escape   v_0 &gt; v_{\text{escape}} Hyperbola</p>
+<p>Where:
+    •   v_{\text{circular}} = \sqrt{\frac{GM}{r}}
+    •   v_{\text{escape}} = \sqrt{\frac{2GM}{r}}</p>
+<p>⸻</p>
+<p>🔢 3 – Numerical Simulation</p>
+<p>We solve the equations of motion numerically using methods like Euler or Runge-Kutta (RK4).</p>
+<p>The simulation tracks:
+    •   Position: \vec{r}(t)
+    •   Velocity: \vec{v}(t)</p>
+<p>⸻</p>
+<p>🛠️ 4 – Example Parameters</p>
+<h1 id="constants">Constants</h1>
+<p>G = 6.67430e-11       # Gravitational constant [m^3/kg/s^2]
+M = 5.972e24          # Mass of Earth [kg]
+R_earth = 6.371e6     # Radius of Earth [m]</p>
+<h1 id="initial-conditions">Initial conditions</h1>
+<p>altitude = 400e3                    # 400 km altitude
+r0 = np.array([R_earth + altitude, 0])  # Initial position
+v0 = np.array([0, 7500])           # Initial velocity (e.g., 7500 m/s tangential)</p>
+<p>⸻</p>
+<p>🖼️ 5 – Visualization &amp; Outputs</p>
+<p>Example of vehicle trajectory representation on the Cartesian coordinates and the curvilinear coordinates. 
+<img alt="Payload Trajectories" src="images/payload_trajectories.png"/></p>
+<p><img alt="Payload Trajectories" src="images/.trajectory.png"/>
+Here is the plot showing different trajectories of a payload released from 400 km above Earth, depending on its initial speed:
+    •   7000 m/s: suborbital or elliptical orbit (falls back).
+    •   7670 m/s: circular orbit (stable).
+    •   8000 m/s: elliptical orbit (longer, higher apogee).
+    •   11200 m/s: escape trajectory (hyperbolic path).</p>
+<p>This simulation visually confirms how initial velocity influences the motion type. </p>
+<p>⸻</p>
+<p>🌍 6 – Real-World Relevance</p>
+<p>These trajectory types are critical in:
+    •   Space missions (e.g., Apollo landings, satellite deployments),
+    •   International Space Station orbits,
+    •   Interplanetary missions (using escape trajectories).</p>
+<p>⸻</p>
+<p>📌 Summary</p>
+<p>Concept Formula
+Gravitational Force F = \frac{GMm}{r^2}
+Circular Velocity   v_c = \sqrt{\frac{GM}{r}}
+Escape Velocity v_e = \sqrt{\frac{2GM}{r}}</p>
+<p>By adjusting the initial velocity vector, you simulate a range of orbital behaviors. This connects classical mechanics with modern astronautical engineering.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
