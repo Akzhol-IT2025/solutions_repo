@@ -46,7 +46,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal">1 Mechanics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">📘 Problem 1: Projectile Motion</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
 </li>
@@ -86,13 +86,13 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">📘 Problem 2: Estimating π Using Monte Carlo Methods</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">7 Measurements</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">📘 Problem 1: Measuring Earth’s Gravitational Acceleration with a Pendulum</a>
 </li>
 </ul>
 </li>
@@ -129,6 +129,70 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<p>Orbital Period and Orbital Radius</p>
+<p>Orbital motion around a central body (like a planet or star) is governed by gravity. A central concept in celestial mechanics is Kepler’s Third Law, which relates the square of the orbital period to the cube of the orbital radius for circular orbits. This relationship enables astronomers to calculate distances, periods, and masses of celestial bodies.</p>
+<p>⸻</p>
+<p>1 – Newton’s Law of Universal Gravitation and Centripetal Force</p>
+<p>For an object of mass m in circular orbit of radius r around a much larger mass M (e.g., planet orbiting the Sun), the gravitational force provides the necessary centripetal force:</p>
+<div class="arithmatex">\[
+\frac{G M m}{r^2} = \frac{m v^2}{r}
+\]</div>
+<p>Solving for orbital speed v:</p>
+<div class="arithmatex">\[
+v = \sqrt{\frac{G M}{r}}
+\]</div>
+<p>⸻</p>
+<p>2 – Orbital Period T</p>
+<p>The orbital period is the time it takes to complete one full orbit:</p>
+<div class="arithmatex">\[
+T = \frac{2\pi r}{v}
+\]</div>
+<p>Substitute v from above:</p>
+<div class="arithmatex">\[
+T = \frac{2\pi r}{\sqrt{\frac{G M}{r}}} = 2\pi \sqrt{\frac{r^3}{G M}}
+\]</div>
+<p>⸻</p>
+<p>3 – Kepler’s Third Law</p>
+<p>The square of the orbital period is proportional to the cube of the orbital radius:</p>
+<div class="arithmatex">\[
+T^2 \propto r^3
+\]</div>
+<p>Or more precisely:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2}{G M} \cdot r^3
+\]</div>
+<p>This is Kepler’s Third Law for circular orbits.</p>
+<p>⸻</p>
+<p>4 – Real-World Applications
+    •   Earth’s Moon: Using the Moon’s known orbital radius r \approx 3.84 \times 10^8 \, \text{m} and T = 27.3 \, \text{days}, the relation holds.
+    •   Satellite Orbits: Helps engineers determine correct orbital altitude and timing.
+    •   Solar System: Used to compare periods and distances of planets.</p>
+<p>⸻</p>
+<p>5 – Computational Model (Python Concept)</p>
+<p>Kepler’s Law using Python:
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="constants">Constants</h1>
+<p>G = 6.67430e-11  # gravitational constant
+M = 5.972e24     # mass of Earth (kg)
+radii = np.linspace(6.7e6, 4.2e7, 100)  # orbital radii in meters
+T_squared = (4 * np.pi<strong>2 * radii</strong>3) / (G * M)</p>
+<p>plt.plot(radii, T_squared)
+plt.title('Kepler\'s Third Law: <span class="arithmatex">\(T^2\)</span> vs <span class="arithmatex">\(r^3\)</span>')
+plt.xlabel('Orbital Radius r (m)')
+plt.ylabel('Orbital Period Squared <span class="arithmatex">\(T^2\)</span> (s<span class="arithmatex">\(^2\)</span>)')
+plt.grid(True)
+plt.show()</p>
+<p>⸻</p>
+<p>Summary
+    •   Gravitational force provides the centripetal force in circular orbits.
+    •   Orbital velocity depends on \sqrt{GM/r}.
+    •   Kepler’s Third Law: T^2 \propto r^3
+    •   This law is used in satellite placement, planetary motion analysis, and astronomy.
+    •   Python simulations can validate the T^2 vs r^3 relationship graphically.</p>
+<p>⸻</p>
+<p>Visualization</p>
+<p><img alt="Kepler Law" src="Keplers_3rdlaw.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

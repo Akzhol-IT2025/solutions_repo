@@ -46,7 +46,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal">1 Mechanics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">📘 Problem 1: Projectile Motion</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
 </li>
@@ -72,6 +72,20 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#lorentz-force-and-charged-particle-motion">Lorentz Force and Charged Particle Motion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-exploration-of-applications">1 - Exploration of Applications</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-simulating-particle-motion">2 - Simulating Particle Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-parameter-exploration">3 - Parameter Exploration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-visualization">4 - Visualization</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -86,13 +100,13 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">📘 Problem 2: Estimating π Using Monte Carlo Methods</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">7 Measurements</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">📘 Problem 1: Measuring Earth’s Gravitational Acceleration with a Pendulum</a>
 </li>
 </ul>
 </li>
@@ -129,6 +143,69 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h2 id="lorentz-force-and-charged-particle-motion">Lorentz Force and Charged Particle Motion</h2>
+<p>The Lorentz force, expressed as:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}
+\]</div>
+<p>governs the motion of charged particles in electric and magnetic fields. It is foundational in areas such as plasma physics, particle accelerators, mass spectrometry, and astrophysics. By simulating its effects, we can visualize complex trajectories and better understand its practical applications.</p>
+<p>⸻</p>
+<h3 id="1-exploration-of-applications">1 - Exploration of Applications</h3>
+<pre><code>•   Systems where Lorentz force plays a key role:
+•   Particle accelerators
+•   Mass spectrometers
+•   Plasma confinement and fusion devices
+•   Magnetic traps (e.g., Penning traps)
+•   Role of Fields:
+•   Electric field \vec{E}: Accelerates the particle linearly
+•   Magnetic field \vec{B}: Alters the direction of motion, causing curved trajectories
+</code></pre>
+<p>⸻</p>
+<h3 id="2-simulating-particle-motion">2 - Simulating Particle Motion</h3>
+<p>You are tasked with simulating the motion of a charged particle under different field conditions:
+    •   A. Uniform magnetic field only
+→ Results in circular or helical trajectories depending on the velocity direction
+    •   B. Combined uniform electric and magnetic fields
+→ Results in spiral motion or helical drift
+    •   C. Crossed electric and magnetic fields
+→ Results in drift motion due to the \vec{E} \times \vec{B} effect</p>
+<p>Use the Lorentz force law as the basis for motion equations:
+$$
+m \frac{d\vec{v}}{dt} = q\vec{E} + q\vec{v} \times \vec{B}
+$$</p>
+<p>Solve this numerically using techniques such as:
+    •   Euler method
+    •   Runge-Kutta method (RK4)</p>
+<p>⸻</p>
+<h3 id="3-parameter-exploration">3 - Parameter Exploration</h3>
+<p>Let the user vary the following parameters in the simulation:
+    •   Field strengths: \vec{E}, \vec{B}
+    •   Initial velocity: \vec{v}_0
+    •   Charge and mass of the particle: q, m</p>
+<p>Observe how these influence:
+    •   Larmor radius:
+$$
+r = \frac{mv_\perp}{|q|B}
+$$
+    •   Cyclotron frequency:
+$$
+\omega_c = \frac{|q|B}{m}
+$$
+    •   Drift velocity in crossed fields:
+$$
+\vec{v}_d = \frac{\vec{E} \times \vec{B}}{B^2}
+$$</p>
+<p>⸻</p>
+<h3 id="4-visualization">4 - Visualization</h3>
+<p>⸻<img alt="alt text" src="../electromagnetism_motions.png"/></p>
+<h3 id="summary">Summary</h3>
+<pre><code>•   Core equation:
+</code></pre>
+<p>$$
+\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}
+$$
+    •   Applications: cyclotrons, plasma devices, spectrometry
+    •   Key physics: Larmor radius, cyclotron motion, \vec{E} \times \vec{B} drift</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

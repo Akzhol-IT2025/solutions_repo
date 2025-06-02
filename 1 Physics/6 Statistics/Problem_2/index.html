@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>📘 Problem 2: Estimating π Using Monte Carlo Methods - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "\ud83d\udcd8 Problem 2: Estimating \u03c0 Using Monte Carlo Methods";
         var mkdocs_page_input_path = "1 Physics/6 Statistics/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,7 +46,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal">1 Mechanics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">📘 Problem 1: Projectile Motion</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
 </li>
@@ -84,15 +84,31 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">📘 Problem 2: Estimating π Using Monte Carlo Methods</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#what-are-monte-carlo-methods">🧠 What Are Monte Carlo Methods?</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-estimating-using-a-circle">1️⃣ Estimating π Using a Circle</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-simulation-steps">2️⃣ Simulation Steps</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-visualization">3️⃣ Visualization</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-buffons-needle-advanced-extension">4️⃣ Buffon’s Needle (Advanced Extension)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#summary-of-key-concepts">✅ Summary of Key Concepts</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#applications">📌 Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#diagram">🖼️ Diagram</a>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">7 Measurements</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">📘 Problem 1: Measuring Earth’s Gravitational Acceleration with a Pendulum</a>
 </li>
 </ul>
 </li>
@@ -120,7 +136,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">6 Statistics</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">📘 Problem 2: Estimating π Using Monte Carlo Methods</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -128,12 +144,89 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-2">Problem 2</h1>
+<h1 id="problem-2-estimating-using-monte-carlo-methods">📘 Problem 2: Estimating π Using Monte Carlo Methods</h1>
+<p>Objective:
+Understand how to estimate the value of \pi using Monte Carlo simulations — a computational technique that relies on randomness and geometric probability.</p>
+<hr/>
+<h2 id="what-are-monte-carlo-methods">🧠 What Are Monte Carlo Methods?</h2>
+<p>Monte Carlo methods are a class of computational algorithms that use random sampling to estimate mathematical values. One of the simplest and most visual examples is estimating \pi by randomly generating points inside a square and determining how many fall inside an inscribed circle.</p>
+<p>This approach connects geometry, probability, and computation, and provides a hands-on way to explore the power of randomness in problem-solving.</p>
+<hr/>
+<h2 id="1-estimating-using-a-circle">1️⃣ Estimating π Using a Circle</h2>
+<p>We consider a unit circle inscribed in a square with side length 2. The idea is:
+    •   The area of the circle is \pi r^2 = \pi, since r = 1
+    •   The area of the square is 4 (since side = 2)
+    •   The ratio of the circle’s area to the square’s area is:
+$$
+\frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}
+$$</p>
+<p>Thus, if we randomly scatter points in the square, the fraction that lands inside the circle should approximate:</p>
+<div class="arithmatex">\[
+\frac{\text{Points inside circle}}{\text{Total points}} \approx \frac{\pi}{4}
+\]</div>
+<p>So we estimate:</p>
+<div class="arithmatex">\[
+\pi \approx 4 \cdot \frac{\text{Points inside}}{\text{Total points}}
+\]</div>
+<hr/>
+<h2 id="2-simulation-steps">2️⃣ Simulation Steps</h2>
+<p>To simulate this in practice:
+    •   Generate random points (x, y) in a square from -1 to 1
+    •   Check if the point lies inside the unit circle:
+$$
+x^2 + y^2 \leq 1
+$$
+    •   Count how many points fall inside the circle
+    •   Use the formula to estimate \pi</p>
+<hr/>
+<h2 id="3-visualization">3️⃣ Visualization</h2>
+<p>You can visualize the result by plotting the randomly generated points:
+    •   Points inside the circle: typically colored blue
+    •   Points outside the circle: typically colored red</p>
+<p>This plot visually shows how the estimate becomes more accurate as the number of points increases.</p>
+<hr/>
+<h2 id="4-buffons-needle-advanced-extension">4️⃣ Buffon’s Needle (Advanced Extension)</h2>
+<p>Another classic Monte Carlo method for estimating \pi is Buffon’s Needle. In this experiment:
+    •   Drop a needle of length l on a plane with parallel lines spaced a distance d apart.
+    •   The probability of the needle crossing a line depends on the angle and position.
+    •   The formula to estimate \pi is:
+$$
+\pi \approx \frac{2 \cdot l \cdot \text{(number of throws)}}{d \cdot \text{(number of crosses)}}
+$$</p>
+<p>This method requires simulating both the angle and position of the needle for each drop.</p>
+<hr/>
+<h2 id="summary-of-key-concepts">✅ Summary of Key Concepts</h2>
+<p>Concept Formula / Description
+Circle-based estimation </p>
+<p>$$
+\pi \approx 4 \cdot \frac{\text{inside}}{\text{total}}
+$$
+Buffon’s Needle estimation  \pi \approx \frac{2lN}{dC}, 
+$$
+where C is number of crosses
+Point inside circle condition
+$$
+    x^2 + y^2 \leq 1
+$$
+Monte Carlo idea    Use randomness to estimate deterministic quantities</p>
+<hr/>
+<h2 id="applications">📌 Applications</h2>
+<p>Monte Carlo methods are used in:
+    •   Statistical sampling and simulations
+    •   Computational physics and chemistry
+    •   Financial risk modeling
+    •   Computer graphics and gaming
+    •   Numerical integration and probabilistic estimation</p>
+<hr/>
+<h2 id="diagram">🖼️ Diagram</h2>
+<p>Figure: Estimating π with Random Points</p>
+<p><img alt="alt text" src="../Monte_Carlo.png"/></p>
+<p>In this diagram, we simulate 10,000 random points within a square. Points inside the circle are shown in blue, and those outside in red. As more points are added, the ratio of inside-to-total approaches <span class="arithmatex">\(<span class="arithmatex">\(\pi/4\)</span>\)</span> allowing us to estimate <span class="arithmatex">\(<span class="arithmatex">\(\pi\)</span>\)</span> with increasing accuracy.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../../7%20Measurements/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../../7%20Measurements/Problem_1/" title="📘 Problem 1: Measuring Earth’s Gravitational Acceleration with a Pendulum">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
