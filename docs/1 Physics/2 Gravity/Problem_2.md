@@ -1,16 +1,8 @@
 # Problem 2
 
-Excellent! Here’s a complete, clean write-up for Gravity – Problem 2: Escape Velocities and Cosmic Velocities, following the same style and clarity as the previous problems. You can paste this directly into your Python/Markdown file.
-
-⸻
-
-Problem 2
-
 Escape Velocities and Cosmic Velocities
 
 ⸻
-
-Motivation
 
 To move from Earth into orbit, leave Earth’s gravity, or escape the Solar System entirely, spacecraft must reach specific speeds. These are known as the first, second, and third cosmic velocities. Understanding these speeds helps define the energy required for different types of space missions and is fundamental in orbital mechanics and interplanetary travel.
 

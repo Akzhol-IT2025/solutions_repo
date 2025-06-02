@@ -1,9 +1,5 @@
 # Problem 3
-Here’s a complete Markdown-style explanation for Problem 3 – Trajectories of a Freely Released Payload Near Earth, ready to be inserted into your Python code or Jupyter notebook (before or after adding the simulations).
-
-⸻
-
-🛰️ Problem 3 – Trajectories of a Freely Released Payload Near Earth
+ Trajectories of a Freely Released Payload Near Earth
 
 ⸻
 
