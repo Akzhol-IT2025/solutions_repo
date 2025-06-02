@@ -1,85 +1,117 @@
-# Problem 1
+# 📘 Problem 1: Projectile Motion
 
-##Projectile motion
-
-Projectile motion is the motion of an object thrown or projected into the air, subject only to the acceleration due to gravity. It follows a curved path (a parabola) and occurs in two dimensions: horizontal (x-axis) and vertical (y-axis).
-
+**Objective:**
+Understand the motion of a projectile launched at an angle and derive equations to describe its trajectory.
 
 ---
 
-To analyze projectile motion, we separate the motion into horizontal and vertical components:
+## 🧠 What is Projectile Motion?
 
-#####1 - Horizontal Motion (x-direction)
+Projectile motion describes the motion of an object that is launched into the air and moves under the influence of gravity alone. It follows a **parabolic** path and can be broken down into two **independent components**:
 
-	•	There is no acceleration in the horizontal direction (assuming air resistance is 
-	negligible), so velocity remains constant:
-$$
-v_x = v_0 \cos \theta
-$$
-	
-	•	The horizontal distance or range is given by:
-$$
-x = v_0 \cos \theta \cdot t
-$$
----
-
-#####2 - Vertical Motion (y-direction)
-	
-	•	The vertical motion is influenced by gravity:
-$$
-v_y = v_0 \sin \theta - g t
-$$
-	•	The vertical displacement at any time t:
-$$
-y = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
-$$
-	•	At the maximum height, the vertical velocity becomes zero:
-$$
-v_y = 0 \Rightarrow t_{\text{max}} = \frac{v_0 \sin \theta}{g}
-$$
-	•	Maximum height reached:
- $$   
-H = \frac{(v_0 \sin \theta)^2}{2g}
-
+* **Horizontal (x-axis)**
+* **Vertical (y-axis)**
 
 ---
 
-#####3 - Time of Flight (total time in the air)
+## 1️⃣ Horizontal Motion (x-direction)
 
-For a projectile launched and landing at the same height:
-$$
-T = \frac{2 v_0 \sin \theta}{g}
-$$
+* There is **no horizontal acceleration** (air resistance is ignored).
+
+* Horizontal velocity remains **constant**:
+
+  $$
+  v_x = v_0 \cos(\theta)
+  $$
+
+* Horizontal displacement (distance covered in x-direction):
+
+  $$
+  x = v_0 \cos(\theta) \cdot t
+  $$
+
 ---
 
-#####4 - Range (Horizontal Distance Traveled)
+## 2️⃣ Vertical Motion (y-direction)
+
+* Affected by **gravitational acceleration** $g = 9.8 \, \text{m/s}^2$
+
+* Vertical velocity at any time $t$:
+
+  $$
+  v_y = v_0 \sin(\theta) - g t
+  $$
+
+* Vertical displacement:
+
+  $$
+  y = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+  $$
+
+* **Time to reach maximum height** (when $v_y = 0$):
+
+  $$
+  t_{\text{max}} = \frac{v_0 \sin(\theta)}{g}
+  $$
+
+* **Maximum height** reached:
+
+  $$
+  H = \frac{(v_0 \sin(\theta))^2}{2g}
+  $$
+
+---
+
+## 3️⃣ Total Time of Flight
+
+If the projectile **returns to the same height** it was launched from:
+
+$$
+T = \frac{2 v_0 \sin(\theta)}{g}
+$$
+
+---
+
+## 4️⃣ Range of the Projectile
+
+The **horizontal distance** the projectile travels before hitting the ground:
+
 $$
 R = \frac{v_0^2 \sin(2\theta)}{g}
 $$
 
+---
+
+## ✅ Summary of Key Variables
+
+| Symbol   | Meaning                                |
+| -------- | -------------------------------------- |
+| $v_0$    | Initial velocity                       |
+| $\theta$ | Launch angle                           |
+| $g$      | Acceleration due to gravity (9.8 m/s²) |
+| $t$      | Time                                   |
+| $x, y$   | Position coordinates                   |
+| $H$      | Maximum height                         |
+| $R$      | Range (horizontal distance)            |
 
 ---
 
-###Summary
+## 📌 Applications
 
-$$
-	•	Initial velocity: v_0
-$$
+Projectile motion is commonly used in:
 
-$$
-	•	Launch angle: \theta
-$$
+* Sports (e.g. calculating ball trajectory)
+* Engineering (e.g. launching projectiles)
+* Video games (e.g. simulating realistic physics)
 
-$$
-	•	Acceleration due to gravity: g \approx 9.8 \, \text{m/s}^2
-$$
+---
 
+## 🖼️ Diagram
 
-___
-Projectile motion is a classic example of 2D motion under constant acceleration.  It is widely used in physics, engineering, and sports science to predict the path of thron or launched klld
+### Figure: Projectile Motion Trajectory
+![alt text](Projectile_motion.png)
 
-<img src="docs/1 Physics/1 Mechanics/Projectile_motion.png" alt="Projectile Motion">v
+This graph shows the trajectory of a projectile launched with an initial speed of 20 m/s at an angle of 45° above the horizontal. The horizontal axis represents the horizontal distance in meters, and the vertical axis shows the vertical height in meters.
 
-<a href="docs/1 Physics/1 Mechanics/Projectile_motion.png" target="_blank">View Image</a>
-
-![Projectile Motion](docs/1%20Physics/1%20Mechanics/Projectile_motion.png)
+The projectile follows a parabolic path: it rises due to the vertical component of the velocity, reaches a maximum height of approximately 10.2 meters, and then falls back to the ground. The total horizontal range is about 40.8 meters, and the motion is symmetric about the peak. This trajectory results from the constant horizontal velocity and the vertical acceleration due to gravity
+$g = 9.8\, \mathrm{m/s}^2$
