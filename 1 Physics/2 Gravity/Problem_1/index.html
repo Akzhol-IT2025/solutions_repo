@@ -48,7 +48,7 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">📘 Problem 1: Projectile Motion</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">📘 Problem 2: Forced Damped Pendulum</a>
 </li>
 </ul>
 </li>
@@ -56,6 +56,22 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-derivation-of-keplers-third-law-circular-orbits">1 - Derivation of Kepler’s Third Law (Circular Orbits)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-interpretation">2 - Interpretation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-real-world-examples">3 - Real-World Examples</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-python-simulation">4 - Python Simulation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#orbital-radii-m">Orbital radii [m]</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-extensions-to-elliptical-orbits">5 - Extensions to Elliptical Orbits</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -129,13 +145,11 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>Problem 1</p>
 <p>Orbital Period and Orbital Radius</p>
 <p>⸻</p>
-<p>Motivation</p>
 <p>Kepler’s Third Law reveals a deep connection between time and space in celestial mechanics. It states that the square of a planet’s orbital period is proportional to the cube of its average orbital radius. This principle helps astronomers and engineers determine orbits, planetary masses, and understand large-scale gravitational systems.</p>
 <p>⸻</p>
-<p>1 - Derivation of Kepler’s Third Law (Circular Orbits)</p>
+<h2 id="1-derivation-of-keplers-third-law-circular-orbits">1 - Derivation of Kepler’s Third Law (Circular Orbits)</h2>
 <p>From Newton’s law of gravitation and circular motion:
     •   Gravitational force:
 $$
@@ -162,12 +176,13 @@ $$
 T^2 = \frac{4\pi^2 r^3}{G M}
 $$</p>
 <p>⸻</p>
-<p>2 - Interpretation
-    •   T^2 \propto r^3 for all small orbiting bodies (mass m) around a large mass M
-    •   Applies to planets, moons, satellites, and more
-    •   The constant of proportionality depends on the central mass M</p>
+<h2 id="2-interpretation">2 - Interpretation</h2>
+<pre><code>•   T^2 \propto r^3 for all small orbiting bodies (mass m) around a large mass M
+•   Applies to planets, moons, satellites, and more
+•   The constant of proportionality depends on the central mass M
+</code></pre>
 <p>⸻</p>
-<p>3 - Real-World Examples</p>
+<h2 id="3-real-world-examples">3 - Real-World Examples</h2>
 <p>The Moon
     •   r \approx 3.84 \times 10^8\, \text{m}
     •   T \approx 27.3\, \text{days}
@@ -177,16 +192,9 @@ $$</p>
     •   Mars: r = 1.52\, \text{AU}, T = 1.88\, \text{years}
     •   Verify: \frac{T^2}{r^3} \approx \text{constant}</p>
 <p>⸻</p>
-<p>4 - Python Simulation</p>
-<p>import numpy as np
-import matplotlib.pyplot as plt</p>
-<h1 id="constants">Constants</h1>
-<p>G = 6.67430e-11      # Gravitational constant [m^3 kg^-1 s^-2]
-M = 1.989e30         # Mass of the Sun [kg]</p>
-<h1 id="orbital-radii-m">Orbital radii [m]</h1>
-<p>radii = np.linspace(5e10, 3e11, 100)
-T_squared = (4 * np.pi<strong>2 * radii</strong>3) / (G * M)</p>
-<h1 id="plot-t2-vs-r3">Plot T^2 vs r^3</h1>
+<h2 id="4-python-simulation">4 - Python Simulation</h2>
+<p>Plot <span class="arithmatex">\(<span class="arithmatex">\(T^2  vs  r^3\)</span>\)</span>
+<img alt="alt text" src="../Screenshot%202025-06-03%20at%2016.50.01.png"/></p>
 <p>plt.plot(radii**3, T_squared, label='T² vs r³')
 plt.xlabel("Orbital Radius Cubed (r³) [m³]")
 plt.ylabel("Orbital Period Squared (T²) [s²]")
@@ -194,25 +202,24 @@ plt.title("Kepler's Third Law - Verification")
 plt.grid(True)
 plt.legend()
 plt.show()</p>
+<h3 id="constants">Constants</h3>
+<p>G = 6.67430e-11      # Gravitational constant [m^3 kg^-1 s^-2]
+M = 1.989e30         # Mass of the Sun [kg]</p>
+<h3 id="orbital-radii-m">Orbital radii [m]</h3>
+<p>radii = np.linspace(5e10, 3e11, 100)
+T_squared = (4 * np.pi<strong>2 * radii</strong>3) / (G * M)</p>
 <p>⸻</p>
-<p>5 - Extensions to Elliptical Orbits
-    •   Replace r with semi-major axis a:
+<h2 id="5-extensions-to-elliptical-orbits">5 - Extensions to Elliptical Orbits</h2>
+<p>Replace r with semi-major axis a:
 $$
 T^2 = \frac{4\pi^2 a^3}{G M}
 $$
-    •   Applies to all elliptical orbits, not just circular ones
-    •   In binary systems: use M + m for the total mass</p>
-<p>⸻</p>
-<p>Summary
-    •   Kepler’s 3rd Law: T^2 \propto r^3
-    •   Fundamental in predicting and analyzing orbital motion
-    •   Simulations confirm the proportionality
-    •   Widely used in astrophysics, aerospace, and planetary science</p>
-<p><img alt="Kepler's Law" src="images/kepler_third_law.png"/></p>
+•   Applies to all elliptical orbits, not just circular ones
+    •   In binary systems: use M+ m for the total mass</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../1%20Mechanics/Problem_2/" title="Problem 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../1%20Mechanics/Problem_2/" title="📘 Problem 2: Forced Damped Pendulum"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
