@@ -1,18 +1,14 @@
 # Problem 1
 
-Problem 1
-
 Orbital Period and Orbital Radius
 
 ⸻
-
-Motivation
 
 Kepler’s Third Law reveals a deep connection between time and space in celestial mechanics. It states that the square of a planet’s orbital period is proportional to the cube of its average orbital radius. This principle helps astronomers and engineers determine orbits, planetary masses, and understand large-scale gravitational systems.
 
 ⸻
 
-1 - Derivation of Kepler’s Third Law (Circular Orbits)
+## 1 - Derivation of Kepler’s Third Law (Circular Orbits)
 
 From Newton’s law of gravitation and circular motion:
 	•	Gravitational force:
@@ -44,14 +40,14 @@ $$
 
 ⸻
 
-2 - Interpretation
+## 2 - Interpretation
 	•	T^2 \propto r^3 for all small orbiting bodies (mass m) around a large mass M
 	•	Applies to planets, moons, satellites, and more
 	•	The constant of proportionality depends on the central mass M
 
 ⸻
 
-3 - Real-World Examples
+## 3 - Real-World Examples
 
 The Moon
 	•	r \approx 3.84 \times 10^8\, \text{m}
@@ -65,20 +61,10 @@ Planets
 
 ⸻
 
-4 - Python Simulation
+## 4 - Python Simulation
+Plot $$T^2  vs  r^3$$
+![alt text](<Screenshot 2025-06-03 at 16.50.01.png>)
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Constants
-G = 6.67430e-11      # Gravitational constant [m^3 kg^-1 s^-2]
-M = 1.989e30         # Mass of the Sun [kg]
-
-# Orbital radii [m]
-radii = np.linspace(5e10, 3e11, 100)
-T_squared = (4 * np.pi**2 * radii**3) / (G * M)
-
-# Plot T^2 vs r^3
 plt.plot(radii**3, T_squared, label='T² vs r³')
 plt.xlabel("Orbital Radius Cubed (r³) [m³]")
 plt.ylabel("Orbital Period Squared (T²) [s²]")
@@ -88,23 +74,23 @@ plt.legend()
 plt.show()
 
 
+### Constants
+G = 6.67430e-11      # Gravitational constant [m^3 kg^-1 s^-2]
+M = 1.989e30         # Mass of the Sun [kg]
+
+### Orbital radii [m]
+radii = np.linspace(5e10, 3e11, 100)
+T_squared = (4 * np.pi**2 * radii**3) / (G * M)
+
+
+
+
 ⸻
 
-5 - Extensions to Elliptical Orbits
-	•	Replace r with semi-major axis a:
+## 5 - Extensions to Elliptical Orbits
+Replace r with semi-major axis a:
 $$
 T^2 = \frac{4\pi^2 a^3}{G M}
 $$
-	•	Applies to all elliptical orbits, not just circular ones
-	•	In binary systems: use M + m for the total mass
-
-⸻
-
-Summary
-	•	Kepler’s 3rd Law: T^2 \propto r^3
-	•	Fundamental in predicting and analyzing orbital motion
-	•	Simulations confirm the proportionality
-	•	Widely used in astrophysics, aerospace, and planetary science
-
-    
-![Kepler's Law](images/kepler_third_law.png)
+•	Applies to all elliptical orbits, not just circular ones
+	•	In binary systems: use M+ m for the total mass
